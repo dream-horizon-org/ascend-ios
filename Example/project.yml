@@ -1,0 +1,43 @@
+name: AscendExample
+options:
+  bundleIdPrefix: com.ascend
+  deploymentTarget:
+    iOS: "14.0"
+  developmentLanguage: en
+  xcodeVersion: "12.0"
+
+packages:
+  Ascend:
+    path: ..
+
+targets:
+  AscendExample:
+    type: application
+    platform: iOS
+    deploymentTarget: "14.0"
+    sources:
+      - path: AscendExample
+    settings:
+      PRODUCT_BUNDLE_IDENTIFIER: com.ascend.AscendExample
+      PRODUCT_NAME: AscendExample
+      SWIFT_VERSION: "5.0"
+      INFOPLIST_FILE: AscendExample/Info.plist
+      INFOPLIST_KEY_UIApplicationSceneManifest_Generation: YES
+      INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents: YES
+      INFOPLIST_KEY_UILaunchScreen_Generation: YES
+      INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad: "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight"
+      INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone: "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight"
+    dependencies:
+      - package: Ascend
+        product: Ascend
+
+schemes:
+  AscendExample:
+    build:
+      targets:
+        AscendExample: all
+    run:
+      config: Debug
+    test:
+      config: Debug
+

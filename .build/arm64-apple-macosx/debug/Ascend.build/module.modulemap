@@ -1,0 +1,4 @@
+module Ascend {
+    header "/Users/nikitabhargava/Desktop/ascend/ascend-ios/.build/arm64-apple-macosx/debug/Ascend.build/Ascend-Swift.h"
+    requires objc
+}
