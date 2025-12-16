@@ -216,7 +216,7 @@ internal final class ExperimentsAPI: @unchecked Sendable {
             let variantName = allocExp.variantName ?? "";
             
             let experiment = Experiment(
-                experimentId: allocExp.experimentId ?? UUID().uuidString,
+                experimentId: allocExp.experimentId ?? "",
                 userIdentifierType: "user_id",
                 status: allocExp.status,
                 variables: variablesDict.isEmpty ? nil : ExperimentVariable.dictionary(variablesDict),
