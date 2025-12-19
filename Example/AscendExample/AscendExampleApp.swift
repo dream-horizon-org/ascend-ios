@@ -61,7 +61,7 @@ struct AscendExampleApp: App {
             print("✅ Ascend SDK initialized successfully")
             
             // Set a user (required for experiments)
-            Ascend.user.setUser(userId: "example-user-\(UUID().uuidString.prefix(8))")
+            Ascend.user.setUser(userId: "example-user-21C5355B")
             
         } catch {
             print("❌ Failed to initialize Ascend SDK: \(error)")
