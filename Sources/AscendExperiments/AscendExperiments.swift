@@ -350,18 +350,11 @@ public final class AscendExperiments: AscendPluginProtocol, @unchecked Sendable 
                     
                     // Merge with existing experiments (matching Plugger-iOS behavior)
                     // Start with a copy of current experiments to ensure correct type
-                    var mergedExperiments: [String: Experiment] = self.currentExperiments
+                    var mergedExperiments: [String: Experiment] = [:]
                     
                     // Add/update fetched experiments
                     for experiment in experiments {
                         mergedExperiments[experiment.experimentKey] = experiment
-                    }
-                    
-                    // Remove experiments not in defaultExperiments (matching Plugger-iOS behavior)
-                    for experimentKey in mergedExperiments.keys {
-                        if self.defaultExperiments[experimentKey] == nil {
-                            mergedExperiments.removeValue(forKey: experimentKey)
-                        }
                     }
                     
                     let oldExperiments = self.currentExperiments
