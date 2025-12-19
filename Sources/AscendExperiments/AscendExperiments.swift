@@ -349,12 +349,8 @@ public final class AscendExperiments: AscendPluginProtocol, @unchecked Sendable 
                     self.foregroundHandler?.handleResponseHeader(headers: responseInfo.headers)
                     
                     // Merge with existing experiments (matching Plugger-iOS behavior)
-                    var mergedExperiments: [String: Experiment] = [:]
-                    
-                    // Keep existing experiments
-                    for (experimentKey, experiment) in self.currentExperiments {
-                        mergedExperiments[experimentKey] = experiment
-                    }
+                    // Start with a copy of current experiments to ensure correct type
+                    var mergedExperiments: [String: Experiment] = self.currentExperiments
                     
                     // Add/update fetched experiments
                     for experiment in experiments {

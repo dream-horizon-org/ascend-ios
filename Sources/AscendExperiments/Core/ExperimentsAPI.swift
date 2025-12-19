@@ -59,7 +59,7 @@ internal final class ExperimentsAPI: @unchecked Sendable {
         let payload = AllocationsPayload(
             experimentKeys: experimentKeys,
             stableId: guestId,
-            userId: userId,
+            userId: userId.isEmpty ? nil : userId,
             attributes: attributes
         )
 
