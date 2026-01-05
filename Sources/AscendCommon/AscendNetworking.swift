@@ -263,6 +263,11 @@ internal final class AscendNetworking: @unchecked Sendable {
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.setValue("Ascend-iOS-SDK", forHTTPHeaderField: "User-Agent")
         
+        // Add x-api-key header from core config if available
+        if let apiKey = AscendCore.configuration?.apiKey, !apiKey.isEmpty {
+            request.setValue(apiKey, forHTTPHeaderField: "x-api-key")
+        }
+        
         // Add config headers
         for (key, value) in config.headers {
             request.setValue(value, forHTTPHeaderField: key)

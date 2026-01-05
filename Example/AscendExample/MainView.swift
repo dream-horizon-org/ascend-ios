@@ -131,7 +131,7 @@ struct OverviewView: View {
 // MARK: - Experiments View
 
 struct ExperimentsView: View {
-    @State private var experimentKey = "test-key"
+    @State private var experimentKey = "test"
     @State private var variableName = "color"
     @State private var stringValue: String?
     @State private var boolValue: Bool?
