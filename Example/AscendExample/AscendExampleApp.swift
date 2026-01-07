@@ -21,7 +21,7 @@ struct AscendExampleApp: App {
     private func setupAscendSDK() {
         // 1. Configure Core Settings
         let coreConfig = AscendCoreConfig(
-            apiKey: "example-api-key",
+            apiKey: "a87be0af-4239-43cb-8134-9e6d92dc3984",
             environment: "development",
             enableDebugLogging: true
         )
@@ -32,20 +32,20 @@ struct AscendExampleApp: App {
             timeout: 30.0,
             shouldRetry: true,
             maxRetries: 3,
-            defaultHeaders: ["api-key": "some-api-key"]
+            defaultHeaders: [:] // Additional default headers can be added here
         )
         
         // 3. Configure Experiments Plugin
         let experimentsConfig = AscendExperimentsConfiguration.development(
-            apiBaseUrl: "http://localhost:8100",
+            apiBaseUrl: "http://localhost:8000",
             apiEndpoint: "/v1/allocations", // Use allocations endpoint
             defaultValues: [
-                "test-key": .dictionary([
+                "test": .dictionary([
                     "color": .string("xyz"),
                     "age": .int(100)
-                ]),
+                ]), 
             ],
-            headers: ["api-key": "test-key"]
+            headers: [:]
         )
         
         // 4. Create SDK Configuration
